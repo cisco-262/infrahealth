@@ -27,7 +27,7 @@ Ping behavior depends on the operating system's built-in `ping` command.
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/infrahealth.git
+git clone https://github.com/cisco-262/infrahealth.git
 cd infrahealth
 python -m venv .venv
 ```
