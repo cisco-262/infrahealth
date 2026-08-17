@@ -1,0 +1,24 @@
+{
+  "targets": [
+    {
+      "name": "OpsHome",
+      "host": "opshome.run",
+      "ping": true,
+      "ports": [
+        80,
+        443
+      ],
+      "urls": [
+        "https://opshome.run"
+      ]
+    },
+    {
+      "name": "Cloudflare DNS",
+      "host": "1.1.1.1",
+      "ping": true,
+      "ports": [
+        443
+      ]
+    }
+  ]
+}
