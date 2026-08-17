@@ -1,6 +1,9 @@
 # InfraHealth
 
 [![CI](https://github.com/cisco-262/infrahealth/actions/workflows/ci.yml/badge.svg)](https://github.com/cisco-262/infrahealth/actions/workflows/ci.yml)
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Alpha-orange)
 
 A lightweight Python CLI for checking host reachability, TCP ports, and HTTP/HTTPS service health.
 
