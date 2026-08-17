@@ -1,5 +1,7 @@
 # InfraHealth
 
+[![CI](https://github.com/cisco-262/infrahealth/actions/workflows/ci.yml/badge.svg)](https://github.com/cisco-262/infrahealth/actions/workflows/ci.yml)
+
 A lightweight Python CLI for checking host reachability, TCP ports, and HTTP/HTTPS service health.
 
 InfraHealth is designed for small infrastructure checks, homelabs, lab environments, and simple operational verification without requiring a monitoring server or database.
@@ -14,6 +16,8 @@ InfraHealth is designed for small infrastructure checks, homelabs, lab environme
 - JSON report export
 - Simple JSON configuration
 - Cross-platform Python structure
+- Installable `infrahealth` command
+- Automated tests with GitHub Actions
 
 ## Requirements
 
@@ -24,11 +28,16 @@ Ping behavior depends on the operating system's built-in `ping` command.
 
 ## Quick Start
 
-Clone the repository and install dependencies:
+Clone the repository:
 
 ```bash
 git clone https://github.com/cisco-262/infrahealth.git
 cd infrahealth
+```
+
+Create a virtual environment:
+
+```bash
 python -m venv .venv
 ```
 
@@ -46,28 +55,66 @@ Linux/macOS:
 source .venv/bin/activate
 ```
 
-Install dependencies:
+Install InfraHealth:
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -e .
+```
+
+Verify the installation:
+
+```bash
+infrahealth --version
+```
+
+Expected output:
+
+```text
+InfraHealth 0.1.0
 ```
 
 Run InfraHealth:
 
 ```bash
+infrahealth
+```
+
+You can also run it as a Python module:
+
+```bash
+python -m infrahealth
+```
+
+The original entry point remains available:
+
+```bash
 python main.py
+```
+
+## Usage
+
+Use the default example configuration:
+
+```bash
+infrahealth
 ```
 
 Use a custom configuration:
 
 ```bash
-python main.py --config my-config.json
+infrahealth --config my-config.json
 ```
 
 Run without creating a JSON report:
 
 ```bash
-python main.py --no-json
+infrahealth --no-json
+```
+
+Show the installed version:
+
+```bash
+infrahealth --version
 ```
 
 ## Configuration
@@ -136,35 +183,56 @@ This behavior may become configurable in later releases.
 
 ## Development
 
-Install development dependencies:
+Install the project with development dependencies:
 
 ```bash
-pip install -r requirements-dev.txt
+python -m pip install -e ".[dev]"
 ```
 
-Run tests:
+Run tests locally:
 
 ```bash
-pytest
+python -m pytest -q
 ```
+
+### Continuous Integration
+
+InfraHealth uses GitHub Actions to run the test suite automatically after pushes and pull requests.
+
+The CI workflow checks the project on:
+
+- Ubuntu
+- Windows
+- macOS
+- Python 3.10
+- Python 3.11
+- Python 3.12
+
+A green CI badge at the top of this README means the automated test workflow is passing.
 
 ## Roadmap
 
 ### v0.1.0
+
 - Ping
 - TCP port checks
 - HTTP/HTTPS checks
 - Console and JSON reports
+- Installable CLI
+- Automated CI tests
 
 ### v0.2.0
+
 - DNS checks
 - TLS certificate inspection
 
 ### v0.3.0
+
 - CSV/HTML reports
 - Historical results
 
 ### v0.4.0
+
 - Scheduled checks
 - Alert integrations
 
